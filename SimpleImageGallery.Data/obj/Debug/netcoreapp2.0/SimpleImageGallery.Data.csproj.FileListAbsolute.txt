@@ -1,0 +1,9 @@
+C:\Users\Maarten\source\repos\Killerapp2\SimpleImageGallery.Data\bin\Debug\netcoreapp2.0\SimpleImageGallery.Data.deps.json
+C:\Users\Maarten\source\repos\Killerapp2\SimpleImageGallery.Data\bin\Debug\netcoreapp2.0\SimpleImageGallery.Data.dll
+C:\Users\Maarten\source\repos\Killerapp2\SimpleImageGallery.Data\obj\Debug\netcoreapp2.0\SimpleImageGallery.Data.csproj.CoreCompileInputs.cache
+C:\Users\Maarten\source\repos\Killerapp2\SimpleImageGallery.Data\obj\Debug\netcoreapp2.0\SimpleImageGallery.Data.AssemblyInfoInputs.cache
+C:\Users\Maarten\source\repos\Killerapp2\SimpleImageGallery.Data\obj\Debug\netcoreapp2.0\SimpleImageGallery.Data.AssemblyInfo.cs
+C:\Users\Maarten\source\repos\Killerapp2\SimpleImageGallery.Data\bin\Debug\netcoreapp2.0\SimpleImageGallery.Data.pdb
+C:\Users\Maarten\source\repos\Killerapp2\SimpleImageGallery.Data\obj\Debug\netcoreapp2.0\SimpleImageGallery.Data.dll
+C:\Users\Maarten\source\repos\Killerapp2\SimpleImageGallery.Data\obj\Debug\netcoreapp2.0\SimpleImageGallery.Data.pdb
+C:\Users\Maarten\source\repos\Killerapp2\SimpleImageGallery.Data\obj\Debug\netcoreapp2.0\SimpleImageGallery.Data.csprojResolveAssemblyReference.cache

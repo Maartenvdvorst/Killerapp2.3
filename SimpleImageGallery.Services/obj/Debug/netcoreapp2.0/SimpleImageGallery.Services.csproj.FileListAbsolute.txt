@@ -1,0 +1,9 @@
+C:\Users\Maarten\source\repos\Killerapp2\SimpleImageGallery.Services\obj\Debug\netcoreapp2.0\SimpleImageGallery.Services.csprojResolveAssemblyReference.cache
+C:\Users\Maarten\source\repos\Killerapp2\SimpleImageGallery.Services\obj\Debug\netcoreapp2.0\SimpleImageGallery.Services.csproj.CoreCompileInputs.cache
+C:\Users\Maarten\source\repos\Killerapp2\SimpleImageGallery.Services\obj\Debug\netcoreapp2.0\SimpleImageGallery.Services.AssemblyInfoInputs.cache
+C:\Users\Maarten\source\repos\Killerapp2\SimpleImageGallery.Services\obj\Debug\netcoreapp2.0\SimpleImageGallery.Services.AssemblyInfo.cs
+C:\Users\Maarten\source\repos\Killerapp2\SimpleImageGallery.Services\bin\Debug\netcoreapp2.0\SimpleImageGallery.Services.deps.json
+C:\Users\Maarten\source\repos\Killerapp2\SimpleImageGallery.Services\bin\Debug\netcoreapp2.0\SimpleImageGallery.Services.dll
+C:\Users\Maarten\source\repos\Killerapp2\SimpleImageGallery.Services\bin\Debug\netcoreapp2.0\SimpleImageGallery.Services.pdb
+C:\Users\Maarten\source\repos\Killerapp2\SimpleImageGallery.Services\obj\Debug\netcoreapp2.0\SimpleImageGallery.Services.dll
+C:\Users\Maarten\source\repos\Killerapp2\SimpleImageGallery.Services\obj\Debug\netcoreapp2.0\SimpleImageGallery.Services.pdb

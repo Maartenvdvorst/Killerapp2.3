@@ -1,0 +1,4 @@
+C:\Users\Maarten\source\repos\Killerapp2\SimpleImageGallery.Services\obj\Debug\netcoreapp2.0\Logic.csprojResolveAssemblyReference.cache
+C:\Users\Maarten\source\repos\Killerapp2\SimpleImageGallery.Services\obj\Debug\netcoreapp2.0\Logic.csproj.CoreCompileInputs.cache
+C:\Users\Maarten\source\repos\Killerapp2\SimpleImageGallery.Services\obj\Debug\netcoreapp2.0\Logic.AssemblyInfoInputs.cache
+C:\Users\Maarten\source\repos\Killerapp2\SimpleImageGallery.Services\obj\Debug\netcoreapp2.0\Logic.AssemblyInfo.cs

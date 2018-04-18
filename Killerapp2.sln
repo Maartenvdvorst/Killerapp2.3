@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Killerapp2", "Killerapp2\Ki
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleImageGallerys.Data", "SimpleImageGallery.Data\SimpleImageGallerys.Data.csproj", "{18972226-D35D-4D79-9978-83858487D9FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleImageGallery.Services", "SimpleImageGallery.Services\SimpleImageGallery.Services.csproj", "{05BAAE92-D5EE-48AA-8C67-A27B4A6222FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleImageGallery.Services", "SimpleImageGallery.Services\SimpleImageGallery.Services.csproj", "{05BAAE92-D5EE-48AA-8C67-A27B4A6222FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

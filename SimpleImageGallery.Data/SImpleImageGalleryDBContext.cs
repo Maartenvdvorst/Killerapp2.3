@@ -1,8 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
-using SimpleImageGallery.Data.Models;
-using System;
+﻿using ImageGallery.Models;
+using Microsoft.EntityFrameworkCore;
 
-namespace SimpleImageGallery.Data
+namespace ImageGallery.Data
 {
     public class SimpleImageGalleryDBContext : DbContext
     {
@@ -13,5 +12,7 @@ namespace SimpleImageGallery.Data
 
         public DbSet<GalleryImage> GalleryImages { get; set; }
         public DbSet<ImageTag> ImageTags { get; set; }
+        public DbSet<Accountlayout> Logingegevens { get; set; }
+        public DbSet<Comment> Comments { get; set; }
     }
 }

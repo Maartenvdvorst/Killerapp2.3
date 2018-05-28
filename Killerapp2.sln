@@ -5,9 +5,15 @@ VisualStudioVersion = 15.0.27428.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Killerapp2", "Killerapp2\Killerapp2.csproj", "{933F7BDE-00ED-40EB-A0F8-4DBF34D6BF44}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleImageGallerys.Data", "SimpleImageGallery.Data\SimpleImageGallerys.Data.csproj", "{18972226-D35D-4D79-9978-83858487D9FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImageGallery.Data", "SimpleImageGallery.Data\ImageGallery.Data.csproj", "{18972226-D35D-4D79-9978-83858487D9FB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleImageGallery.Services", "SimpleImageGallery.Services\SimpleImageGallery.Services.csproj", "{05BAAE92-D5EE-48AA-8C67-A27B4A6222FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImageGallery.Logic", "SimpleImageGallery.Services\ImageGallery.Logic.csproj", "{05BAAE92-D5EE-48AA-8C67-A27B4A6222FC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImageGallery.Interfaces", "ImageGallery.Interfaces\ImageGallery.Interfaces.csproj", "{572000E3-35D8-481B-955E-2655A15D8F94}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImageGallery.Models", "ImageGallery.Models\ImageGallery.Models.csproj", "{4EE3AFE8-EFA6-47E7-B738-49BB0355496E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageGallery.Factory", "ImageGallery.Factory\ImageGallery.Factory.csproj", "{5B60EC1E-769F-4740-BBCC-22A06ACE876A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +33,18 @@ Global
 		{05BAAE92-D5EE-48AA-8C67-A27B4A6222FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05BAAE92-D5EE-48AA-8C67-A27B4A6222FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{05BAAE92-D5EE-48AA-8C67-A27B4A6222FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{572000E3-35D8-481B-955E-2655A15D8F94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{572000E3-35D8-481B-955E-2655A15D8F94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{572000E3-35D8-481B-955E-2655A15D8F94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{572000E3-35D8-481B-955E-2655A15D8F94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EE3AFE8-EFA6-47E7-B738-49BB0355496E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EE3AFE8-EFA6-47E7-B738-49BB0355496E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EE3AFE8-EFA6-47E7-B738-49BB0355496E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EE3AFE8-EFA6-47E7-B738-49BB0355496E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B60EC1E-769F-4740-BBCC-22A06ACE876A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B60EC1E-769F-4740-BBCC-22A06ACE876A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B60EC1E-769F-4740-BBCC-22A06ACE876A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B60EC1E-769F-4740-BBCC-22A06ACE876A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

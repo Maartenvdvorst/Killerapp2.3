@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ImageGallery.Interfaces\ImageGallery.Interfaces.csproj" />
+    <ProjectReference Include="..\SimpleImageGallery.Data\ImageGallery.Data.csproj" />
+    <ProjectReference Include="..\SimpleImageGallery.Services\ImageGallery.Logic.csproj" />
+  </ItemGroup>
+
+</Project>

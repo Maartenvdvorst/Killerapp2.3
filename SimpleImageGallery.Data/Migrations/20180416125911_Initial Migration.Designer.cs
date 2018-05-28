@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Storage.Internal;
-using SimpleImageGallery.Data;
+using ImageGallery.Data;
 using System;
 
 namespace SimpleImageGallery.Data.Migrations
@@ -42,7 +42,7 @@ namespace SimpleImageGallery.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("Description");
+                    b.Property<string>("Description");
 
                     b.Property<int?>("GalleryImageId");
 

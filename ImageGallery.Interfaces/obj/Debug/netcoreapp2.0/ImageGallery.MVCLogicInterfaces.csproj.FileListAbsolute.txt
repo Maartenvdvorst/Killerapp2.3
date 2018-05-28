@@ -1,0 +1,12 @@
+C:\Users\maart\source\repos\Killerapp2.3\ImageGallery.Interfaces\bin\Debug\netcoreapp2.0\ImageGallery.MVCLogicInterfaces.deps.json
+C:\Users\maart\source\repos\Killerapp2.3\ImageGallery.Interfaces\bin\Debug\netcoreapp2.0\ImageGallery.MVCLogicInterfaces.dll
+C:\Users\maart\source\repos\Killerapp2.3\ImageGallery.Interfaces\bin\Debug\netcoreapp2.0\ImageGallery.MVCLogicInterfaces.pdb
+C:\Users\maart\source\repos\Killerapp2.3\ImageGallery.Interfaces\bin\Debug\netcoreapp2.0\ImageGallery.Models.dll
+C:\Users\maart\source\repos\Killerapp2.3\ImageGallery.Interfaces\bin\Debug\netcoreapp2.0\ImageGallery.Models.pdb
+C:\Users\maart\source\repos\Killerapp2.3\ImageGallery.Interfaces\obj\Debug\netcoreapp2.0\ImageGallery.MVCLogicInterfaces.csprojResolveAssemblyReference.cache
+C:\Users\maart\source\repos\Killerapp2.3\ImageGallery.Interfaces\obj\Debug\netcoreapp2.0\ImageGallery.MVCLogicInterfaces.csproj.CoreCompileInputs.cache
+C:\Users\maart\source\repos\Killerapp2.3\ImageGallery.Interfaces\obj\Debug\netcoreapp2.0\ImageGallery.MVCLogicInterfaces.AssemblyInfoInputs.cache
+C:\Users\maart\source\repos\Killerapp2.3\ImageGallery.Interfaces\obj\Debug\netcoreapp2.0\ImageGallery.MVCLogicInterfaces.AssemblyInfo.cs
+C:\Users\maart\source\repos\Killerapp2.3\ImageGallery.Interfaces\obj\Debug\netcoreapp2.0\ImageGallery.MVCLogicInterfaces.csproj.CopyComplete
+C:\Users\maart\source\repos\Killerapp2.3\ImageGallery.Interfaces\obj\Debug\netcoreapp2.0\ImageGallery.MVCLogicInterfaces.dll
+C:\Users\maart\source\repos\Killerapp2.3\ImageGallery.Interfaces\obj\Debug\netcoreapp2.0\ImageGallery.MVCLogicInterfaces.pdb

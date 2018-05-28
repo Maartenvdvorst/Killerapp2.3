@@ -1,0 +1,16 @@
+C:\Users\Maarten\source\repos\Killerapp2\ImageGallery.Models\bin\Debug\netcoreapp2.0\ImageGallery.Models.deps.json
+C:\Users\Maarten\source\repos\Killerapp2\ImageGallery.Models\bin\Debug\netcoreapp2.0\ImageGallery.Models.dll
+C:\Users\Maarten\source\repos\Killerapp2\ImageGallery.Models\bin\Debug\netcoreapp2.0\ImageGallery.Models.pdb
+C:\Users\Maarten\source\repos\Killerapp2\ImageGallery.Models\obj\Debug\netcoreapp2.0\ImageGallery.Models.csproj.CoreCompileInputs.cache
+C:\Users\Maarten\source\repos\Killerapp2\ImageGallery.Models\obj\Debug\netcoreapp2.0\ImageGallery.Models.AssemblyInfoInputs.cache
+C:\Users\Maarten\source\repos\Killerapp2\ImageGallery.Models\obj\Debug\netcoreapp2.0\ImageGallery.Models.AssemblyInfo.cs
+C:\Users\Maarten\source\repos\Killerapp2\ImageGallery.Models\obj\Debug\netcoreapp2.0\ImageGallery.Models.dll
+C:\Users\Maarten\source\repos\Killerapp2\ImageGallery.Models\obj\Debug\netcoreapp2.0\ImageGallery.Models.pdb
+C:\Users\maart\source\repos\Killerapp2.3\ImageGallery.Models\bin\Debug\netcoreapp2.0\ImageGallery.Models.deps.json
+C:\Users\maart\source\repos\Killerapp2.3\ImageGallery.Models\bin\Debug\netcoreapp2.0\ImageGallery.Models.dll
+C:\Users\maart\source\repos\Killerapp2.3\ImageGallery.Models\bin\Debug\netcoreapp2.0\ImageGallery.Models.pdb
+C:\Users\maart\source\repos\Killerapp2.3\ImageGallery.Models\obj\Debug\netcoreapp2.0\ImageGallery.Models.csproj.CoreCompileInputs.cache
+C:\Users\maart\source\repos\Killerapp2.3\ImageGallery.Models\obj\Debug\netcoreapp2.0\ImageGallery.Models.AssemblyInfoInputs.cache
+C:\Users\maart\source\repos\Killerapp2.3\ImageGallery.Models\obj\Debug\netcoreapp2.0\ImageGallery.Models.AssemblyInfo.cs
+C:\Users\maart\source\repos\Killerapp2.3\ImageGallery.Models\obj\Debug\netcoreapp2.0\ImageGallery.Models.dll
+C:\Users\maart\source\repos\Killerapp2.3\ImageGallery.Models\obj\Debug\netcoreapp2.0\ImageGallery.Models.pdb

@@ -30,7 +30,7 @@ namespace SimpleImageGallery.Data.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Description = table.Column<int>(nullable: false),
+                    Description = table.Column<string>(nullable: false),
                     GalleryImageId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>

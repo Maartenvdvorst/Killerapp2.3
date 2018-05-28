@@ -896,6 +896,29 @@
         "compile": {
           "ref/netstandard1.3/System.Threading.Tasks.dll": {}
         }
+      },
+      "ImageGallery.Interfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "dependencies": {
+          "ImageGallery.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ImageGallery.Interfaces.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ImageGallery.Interfaces.dll": {}
+        }
+      },
+      "ImageGallery.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "compile": {
+          "bin/placeholder/ImageGallery.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ImageGallery.Models.dll": {}
+        }
       }
     }
   },
@@ -3382,10 +3405,21 @@
         "system.threading.tasks.4.0.11.nupkg.sha512",
         "system.threading.tasks.nuspec"
       ]
+    },
+    "ImageGallery.Interfaces/1.0.0": {
+      "type": "project",
+      "path": "../ImageGallery.Interfaces/ImageGallery.Interfaces.csproj",
+      "msbuildProject": "../ImageGallery.Interfaces/ImageGallery.Interfaces.csproj"
+    },
+    "ImageGallery.Models/1.0.0": {
+      "type": "project",
+      "path": "../ImageGallery.Models/ImageGallery.Models.csproj",
+      "msbuildProject": "../ImageGallery.Models/ImageGallery.Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
+      "ImageGallery.Interfaces >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 2.0.2",
       "Microsoft.EntityFrameworkCore.SqlServer >= 2.0.2",
       "Microsoft.EntityFrameworkCore.Tools >= 2.0.2",
@@ -3393,25 +3427,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Maarten\\.nuget\\packages\\": {},
+    "C:\\Users\\maart\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Maarten\\source\\repos\\Killerapp2\\SimpleImageGallery.Data\\SimpleImageGallerys.Data.csproj",
-      "projectName": "SimpleImageGallerys.Data",
-      "projectPath": "C:\\Users\\Maarten\\source\\repos\\Killerapp2\\SimpleImageGallery.Data\\SimpleImageGallerys.Data.csproj",
-      "packagesPath": "C:\\Users\\Maarten\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Maarten\\source\\repos\\Killerapp2\\SimpleImageGallery.Data\\obj\\",
+      "projectUniqueName": "C:\\Users\\maart\\source\\repos\\Killerapp2.3\\SimpleImageGallery.Data\\ImageGallery.Data.csproj",
+      "projectName": "ImageGallery.Data",
+      "projectPath": "C:\\Users\\maart\\source\\repos\\Killerapp2.3\\SimpleImageGallery.Data\\ImageGallery.Data.csproj",
+      "packagesPath": "C:\\Users\\maart\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\maart\\source\\repos\\Killerapp2.3\\SimpleImageGallery.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Maarten\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\maart\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],
@@ -3424,7 +3458,11 @@
       },
       "frameworks": {
         "netcoreapp2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\maart\\source\\repos\\Killerapp2.3\\ImageGallery.Interfaces\\ImageGallery.Interfaces.csproj": {
+              "projectPath": "C:\\Users\\maart\\source\\repos\\Killerapp2.3\\ImageGallery.Interfaces\\ImageGallery.Interfaces.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

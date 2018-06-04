@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ImageGallery.Data
 {
-    public class UserDal : IUserLogicDal
+    public class UserData : IUserLogicDal
     {
         private readonly SqlConnection connection = new SqlConnection("Data Source = (localdb)\\mssqllocaldb;Database=SimpleImageGallery;Trusted_Connection=True;MultipleActiveResultSets=true");
 
@@ -145,13 +145,37 @@ namespace ImageGallery.Data
                 query.ExecuteNonQuery();
                 connection.Close();
             }
+
+            int id = GetImageId(title, username);
             List<ImageTag> Tags = ParseTags(tags);
+            await CreateNewTags(Tags, id);
+        }
+
+        public int GetImageId(string title, string username)
+        {
+            int id = 0;
             using (SqlCommand query = new SqlCommand("SELECT Id FROM GalleryImages WHERE Title = @Title AND Username = @Username)", connection))
             {
                 connection.Open();
                 query.Parameters.AddWithValue("@Title", title);
                 query.Parameters.AddWithValue("@Username", username);
+                try
+                {
+                    using (SqlDataReader reader = query.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            id = Convert.ToInt32(reader["Id"]);
+                        }
+                    }
+                }
+                catch
+                {
+
+                }
+                connection.Close();
             }
+            return id;
         }
 
         public List<ImageTag> ParseTags(string tags)

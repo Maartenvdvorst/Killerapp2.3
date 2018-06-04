@@ -12,8 +12,6 @@ namespace ImageGallery.Interfaces
 
         bool CheckUser(string gebruikersnaam, string wachtwoord);
 
-        string GetPasswordByUsername(string username);
-
         Task ChangeUser(string gebruikersnaam, string wachtwoord, string oldUserName);
 
         string GetRol(string gebruikersnaam);
@@ -21,5 +19,9 @@ namespace ImageGallery.Interfaces
         IEnumerable<Accountlayout> GetAllUsers();
 
         Accountlayout GetUserByName(string username);
+
+        string CheckValidAccount(string username, string wachtwoord);
+
+        string CheckValidEmail(string email);
     }
 }

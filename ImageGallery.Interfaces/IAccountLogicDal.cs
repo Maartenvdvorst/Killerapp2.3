@@ -10,14 +10,16 @@ namespace ImageGallery.Interfaces
     {
         Task CreateNewAccount(string gebruikersnaam, string wachtwoord, string email);
 
-        string GetPasswordByUsername(string username);
+        Task ChangeUserUsernameAndWachtwoord(string gebruikersnaam, string wachtwoord, string oldUserName);
 
-        Task ChangeUser(string gebruikersnaam, string wachtwoord, string oldUserName);
+        Task ChangeUserUsername(string gebruikersnaam, string oldUserName);
 
         string GetRol(string gebruikersnaam);
 
         IEnumerable<Accountlayout> GetAllUsers();
 
         Accountlayout GetUserByName(string username);
+
+        IEnumerable<string> AllEmails();
     }
 }

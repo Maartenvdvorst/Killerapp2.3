@@ -37,15 +37,14 @@ namespace ImageGallery.Data
                     {
                         while (reader.Read())
                         {
-                            var account = new Accountlayout
-                            {
-                                Id = Convert.ToInt32(reader["Id"]),
-                                Gebruikersnaam = reader["Gebruikersnaam"].ToString(),
-                                Wachtwoord = reader["Wachtwoord"].ToString(),
-                                Email = reader["Email"].ToString(),
-                                Created = Convert.ToDateTime(reader["Created"]),
-                                Rol = reader["Rol"].ToString()
-                            };
+                            var account = new Accountlayout();
+                            account.Id = Convert.ToInt32(reader["Id"]);
+                            account.Gebruikersnaam = reader["Gebruikersnaam"].ToString();
+                            account.Wachtwoord = reader["Wachtwoord"].ToString();
+                            //account.Wachtwoord = (byte[])reader["Wachtwoord"];
+                            account.Email = reader["Email"].ToString();
+                            account.Created = Convert.ToDateTime(reader["Created"]);
+                            account.Rol = reader["Rol"].ToString();
                             allAccounts.Add(account);
                         }
                         reader.Close();
@@ -74,25 +73,25 @@ namespace ImageGallery.Data
             return null;
         }
 
-        public string GetPasswordByUsername(string username)
-        {
-            try
-            {
-                return GetUserByName(username).Wachtwoord;
-            }
-            catch (NullReferenceException)
-            {
-                return null;
-            }
-        }
-
-        public async Task ChangeUser(string gebruikersnaam, string wachtwoord, string OldUserName)
+        public async Task ChangeUserUsernameAndWachtwoord(string gebruikersnaam, string wachtwoord, string OldUserName)
         {
             using (SqlCommand query = new SqlCommand("UPDATE Logingegevens SET Gebruikersnaam = @Gebruikersnaam, Wachtwoord = @Wachtwoord WHERE Gebruikersnaam = @Oldgebruikersnaam", _connection))
             {
                 _connection.Open();
                 query.Parameters.AddWithValue("@Gebruikersnaam", gebruikersnaam);
                 query.Parameters.AddWithValue("@Wachtwoord", wachtwoord);
+                query.Parameters.AddWithValue("@Oldgebruikersnaam", OldUserName);
+                query.ExecuteNonQuery();
+                _connection.Close();
+            }
+        }
+
+        public async Task ChangeUserUsername(string gebruikersnaam, string OldUserName)
+        {
+            using (SqlCommand query = new SqlCommand("UPDATE Logingegevens SET Gebruikersnaam = @Gebruikersnaam WHERE Gebruikersnaam = @Oldgebruikersnaam", _connection))
+            {
+                _connection.Open();
+                query.Parameters.AddWithValue("@Gebruikersnaam", gebruikersnaam);
                 query.Parameters.AddWithValue("@Oldgebruikersnaam", OldUserName);
                 query.ExecuteNonQuery();
                 _connection.Close();
@@ -124,6 +123,33 @@ namespace ImageGallery.Data
 
                 _connection.Close();
                 return rol;
+            }
+        }
+
+        public IEnumerable<string> AllEmails()
+        {
+            List<string> allmails = new List<string>();
+            using (SqlCommand query = new SqlCommand("SELECT Email FROM Logingegevens", _connection))
+            {
+                _connection.Open();
+                try
+                {
+                    using (SqlDataReader reader = query.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            allmails.Add(reader["Email"].ToString());
+                        }
+                        reader.Close();
+                    }
+                }
+                catch
+                {
+                    return null;
+                }
+
+                _connection.Close();
+                return allmails;
             }
         }
     }

@@ -25,9 +25,9 @@ namespace ImageGallery.Factory
             return newlogic;
         }
 
-        public UserDal Getuserdal()
+        public UserData Getuserdal()
         {
-            UserDal newdata = new UserDal();
+            UserData newdata = new UserData();
             return newdata;
         }
 

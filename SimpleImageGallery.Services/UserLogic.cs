@@ -31,6 +31,8 @@ namespace ImageGallery.Logic
 
         public Task SetNewImage(string title, string tags, string uri, string username)
         {
+            //if(tags == "")
+
             return _logicdal.SetNewImage(title, tags, uri, username);
         }
 

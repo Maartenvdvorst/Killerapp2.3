@@ -3,6 +3,7 @@ using ImageGallery.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -84,7 +85,7 @@ namespace ImageGallery.Data
         public IEnumerable<ImageTag> GetTagsBySearch(string tag)
         {
             List<ImageTag> foundTags = new List<ImageTag>();
-            using (SqlCommand query = new SqlCommand("SELECT * FROM ImageTags WHERE (Description LIKE '%' + @Tag + '%')", connection))
+            using (SqlCommand query = new SqlCommand("SELECT * FROM Tags WHERE (Description LIKE '%' + @Tag + '%')", connection))
             {
                 connection.Open();
                 query.Parameters.AddWithValue("@Tag", tag);
@@ -98,7 +99,6 @@ namespace ImageGallery.Data
                             {
                                 Id = Convert.ToInt32(reader["Id"]),
                                 Description = reader["Created"].ToString(),
-                                GalleryImageId = Convert.ToInt32(reader["GalleryImageId"])
                             };
 
                             foundTags.Add(foundtag);
@@ -124,81 +124,65 @@ namespace ImageGallery.Data
             {
                 foreach(ImageTag Tag in foundTags)
                 {
-                    if(Tag.GalleryImageId == image.Id)
-                    {
-                        foundImages.Add(image);
-                    }
+                    //if(Tag.GalleryImageId == image.Id)
+                    //{
+                    //    foundImages.Add(image);
+                    //}
                 }
             }
             return foundImages;
         }
 
-        public async Task SetNewImage(string title, string tags, string uri, string username)
+        public void CreateNewTags(List<ImageTag> Tags, int id)
         {
-            using (SqlCommand query = new SqlCommand("INSERT INTO GalleryImages(Created, Title, Url, Username) VALUES (@Created, @Title, @Url, @Username)", connection))
+            foreach (ImageTag tag in Tags)
             {
-                connection.Open();
-                query.Parameters.AddWithValue("@Created", DateTime.Now);
-                query.Parameters.AddWithValue("@Title", title);
-                query.Parameters.AddWithValue("@Url", uri);
-                query.Parameters.AddWithValue("@Username", username);
-                query.ExecuteNonQuery();
-                connection.Close();
-            }
+                using (SqlCommand query = new SqlCommand("InsertTag", connection))
+                {
+                    query.CommandType = CommandType.StoredProcedure;
+                    query.Parameters.Add("@Description", SqlDbType.VarChar);
+                    query.Parameters.Add("@id", SqlDbType.Int);
+                    query.Parameters["@Description"].Value = tag.Description;
+                    query.Parameters["@Id"].Value = id;
+                    connection.Open();
+                    query.ExecuteNonQuery();
+                    connection.Close();
+                }
 
-            int id = GetImageId(title, username);
-            List<ImageTag> Tags = ParseTags(tags);
-            await CreateNewTags(Tags, id);
+            }
         }
 
-        public int GetImageId(string title, string username)
+        public async Task SetNewImage(string title, string tags, string uri, string username)
         {
-            int id = 0;
-            using (SqlCommand query = new SqlCommand("SELECT Id FROM GalleryImages WHERE Title = @Title AND Username = @Username)", connection))
+            int imageid = 0;
+            using (SqlCommand query = new SqlCommand("InsertImage", connection))
             {
+                query.CommandType = CommandType.StoredProcedure;
+                query.Parameters.Add("@Created", SqlDbType.DateTime2);
+                query.Parameters.Add("@Title", SqlDbType.VarChar);
+                query.Parameters.Add("@Url", SqlDbType.VarChar);
+                query.Parameters.Add("@Username", SqlDbType.VarChar);
+                var id = query.Parameters.Add("Id", SqlDbType.Int);
+                id.Direction = ParameterDirection.ReturnValue;
+                query.Parameters["@Created"].Value = DateTime.Now;
+                query.Parameters["@Title"].Value = title;
+                query.Parameters["@Url"].Value = uri;
+                query.Parameters["@Username"].Value = username;
                 connection.Open();
-                query.Parameters.AddWithValue("@Title", title);
-                query.Parameters.AddWithValue("@Username", username);
-                try
-                {
-                    using (SqlDataReader reader = query.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            id = Convert.ToInt32(reader["Id"]);
-                        }
-                    }
-                }
-                catch
-                {
-
-                }
+                query.ExecuteNonQuery();
+                var result = id.Value;
+                imageid = Convert.ToInt32(result);
                 connection.Close();
             }
-            return id;
+            
+            List<ImageTag> Tags = ParseTags(tags);
+            CreateNewTags(Tags, imageid);
         }
 
         public List<ImageTag> ParseTags(string tags)
         {
-            return tags.Split(",").Select(tag => new ImageTag { Description = tag }).ToList();
+            return tags.Split(", ").Select(tag => new ImageTag { Description = tag }).ToList();
         }
-
-        public async Task CreateNewTags(List<ImageTag>Tags, int PostId)
-        {
-            foreach (ImageTag tag in Tags)
-            {
-                using (SqlCommand query = new SqlCommand("INSERT INTO ImageTags(Description, ImageId) VALUES (@Description, @ImageId)", connection))
-                {
-                    connection.Open();
-                    query.Parameters.AddWithValue("@Description", tag.Description);
-                    query.Parameters.AddWithValue("@ImageId", PostId);
-                    query.ExecuteNonQuery();
-                    connection.Close();
-                }
-            }
-        }
-
-        
 
         public IEnumerable<Comment> GetCommentsByPostId(int PostId)
         {

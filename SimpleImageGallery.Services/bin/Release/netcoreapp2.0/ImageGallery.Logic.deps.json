@@ -1,0 +1,49 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v2.0",
+    "signature": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v2.0": {
+      "ImageGallery.Logic/1.0.0": {
+        "dependencies": {
+          "ImageGallery.Interfaces": "1.0.0"
+        },
+        "runtime": {
+          "ImageGallery.Logic.dll": {}
+        }
+      },
+      "ImageGallery.Interfaces/1.0.0": {
+        "dependencies": {
+          "ImageGallery.Models": "1.0.0"
+        },
+        "runtime": {
+          "ImageGallery.Interfaces.dll": {}
+        }
+      },
+      "ImageGallery.Models/1.0.0": {
+        "runtime": {
+          "ImageGallery.Models.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ImageGallery.Logic/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ImageGallery.Interfaces/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ImageGallery.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

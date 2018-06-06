@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImageGallery.Interfaces", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImageGallery.Models", "ImageGallery.Models\ImageGallery.Models.csproj", "{4EE3AFE8-EFA6-47E7-B738-49BB0355496E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageGallery.Factory", "ImageGallery.Factory\ImageGallery.Factory.csproj", "{5B60EC1E-769F-4740-BBCC-22A06ACE876A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImageGallery.Factory", "ImageGallery.Factory\ImageGallery.Factory.csproj", "{5B60EC1E-769F-4740-BBCC-22A06ACE876A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

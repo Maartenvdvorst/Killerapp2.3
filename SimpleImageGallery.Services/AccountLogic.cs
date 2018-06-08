@@ -19,7 +19,7 @@ namespace ImageGallery.Logic
 
         public Task CreateNewAccount(string gebruikersnaam, string wachtwoord, string email)
         {
-            return _accountdal.CreateNewAccount(gebruikersnaam, wachtwoord, email);
+            return _accountdal.CreateNewAccount(gebruikersnaam, Hashpassword(wachtwoord), email);
         }
 
         public IEnumerable<Accountlayout> GetAllUsers()
@@ -34,9 +34,6 @@ namespace ImageGallery.Logic
 
         public bool CheckUser(string gebruikersnaam, string wachtwoord)
         {
-            //var passwordhash = new MD5CryptoServiceProvider();
-            //var data = Encoding.ASCII.GetBytes(wachtwoord);
-            //var hashedpassword = passwordhash.ComputeHash(data);
             if (gebruikersnaam == "" || wachtwoord == "")
             {
                 return false;
@@ -44,7 +41,7 @@ namespace ImageGallery.Logic
 
             try
             {
-                if (((GetUserByName(gebruikersnaam)).Wachtwoord) == wachtwoord)
+                if (_accountdal.Checkuser(gebruikersnaam, Hashpassword(wachtwoord)) == true)
                 {
                     return true;
                 }
@@ -61,7 +58,7 @@ namespace ImageGallery.Logic
         {
             if (wachtwoord != "")
             {
-                return _accountdal.ChangeUserUsernameAndWachtwoord(gebruikersnaam, wachtwoord, oldUserName);
+                return _accountdal.ChangeUserUsernameAndWachtwoord(gebruikersnaam, Hashpassword(wachtwoord), oldUserName);
             }
             else
             {
@@ -146,6 +143,14 @@ namespace ImageGallery.Logic
                 }
             }
             return errormessage;
+        }
+
+        public byte[] Hashpassword(string wachtwoord)
+        {
+            var passwordhash = new MD5CryptoServiceProvider();
+            var data = Encoding.ASCII.GetBytes(wachtwoord);
+            byte[] hashedpassword = passwordhash.ComputeHash(data);
+            return hashedpassword;
         }
     }
 }

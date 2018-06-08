@@ -1,9 +1,11 @@
 ﻿using ImageGallery.Interfaces;
 using ImageGallery.Models;
+using Microsoft.WindowsAzure.Storage;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.WindowsAzure.Storage.Blob;
 
 namespace ImageGallery.Logic
 {
@@ -29,16 +31,11 @@ namespace ImageGallery.Logic
             return _logicdal.GetImageByTag(tag);
         }
 
-        public Task SetNewImage(string title, string tags, string uri, string username)
+        public Task SetNewImage(string title, string tags, Uri uri, string username)
         {
             //if(tags == "")
 
             return _logicdal.SetNewImage(title, tags, uri, username);
-        }
-
-        public List<ImageTag> ParseTags(string tags)
-        {
-            return _logicdal.ParseTags(tags);
         }
 
         public IEnumerable<Comment> GetCommentsByPostId(int postId)
@@ -49,6 +46,13 @@ namespace ImageGallery.Logic
         public Task SetNewComment(string discription, string username, int imageId)
         {
             return _logicdal.SetNewComment(discription, username, imageId);
+        }
+
+        public CloudBlobContainer GetBlobContainer(string azureConnectionString, string containerName)
+        {
+            var storageAccount = CloudStorageAccount.Parse(azureConnectionString);
+            var blobClient = storageAccount.CreateCloudBlobClient();
+            return blobClient.GetContainerReference(containerName);
         }
     }
 }

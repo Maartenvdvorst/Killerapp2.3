@@ -31,5 +31,15 @@ namespace ImageGallery.Logic
         {
             return _Adminlogicdal.GetAllUsers(username);
         }
+
+        public Task MakeUser(string gebruikersnaam)
+        {
+            return _Adminlogicdal.MakeUser(gebruikersnaam);
+        }
+
+        public Task MakeAdmin(string gebruikersnaam)
+        {
+            return _Adminlogicdal.MakeAdmin(gebruikersnaam);
+        }
     }
 }

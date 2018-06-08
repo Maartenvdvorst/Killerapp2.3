@@ -1,4 +1,6 @@
-﻿using ImageGallery.Models;
+﻿using System;
+using ImageGallery.Models;
+using Microsoft.WindowsAzure.Storage.Blob;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -12,12 +14,12 @@ namespace ImageGallery.Interfaces
 
         GalleryImage GetImageById(int postId);
 
-        Task SetNewImage(string title, string tags, string uri, string username);
-
-        List<ImageTag> ParseTags(string tags);
+        Task SetNewImage(string title, string tags, Uri uri, string username);
 
         IEnumerable<Comment> GetCommentsByPostId(int postId);
 
         Task SetNewComment(string discription, string username, int imageId);
+
+        CloudBlobContainer GetBlobContainer(string azureConnectionString, string containerName);
     }
 }

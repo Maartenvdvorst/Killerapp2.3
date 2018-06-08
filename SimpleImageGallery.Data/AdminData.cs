@@ -71,5 +71,29 @@ namespace ImageGallery.Data
                 return alleUsers;
             }
         }
+
+        public async Task MakeUser(string gebruikersnaam)
+        {
+            using (SqlCommand query = new SqlCommand("UPDATE Logingegevens SET Rol = @rol WHERE Gebruikersnaam = @gebruikersnaam", _connection))
+            {
+                _connection.Open();
+                query.Parameters.AddWithValue("@rol", "User");
+                query.Parameters.AddWithValue("@gebruikersnaam", gebruikersnaam);
+                query.ExecuteNonQuery();
+                _connection.Close();
+            }
+        }
+
+        public async Task MakeAdmin(string gebruikersnaam)
+        {
+            using (SqlCommand query = new SqlCommand("UPDATE Logingegevens SET Rol = @rol WHERE Gebruikersnaam = @gebruikersnaam", _connection))
+            {
+                _connection.Open();
+                query.Parameters.AddWithValue("@rol", "Admin");
+                query.Parameters.AddWithValue("@gebruikersnaam", gebruikersnaam);
+                query.ExecuteNonQuery();
+                _connection.Close();
+            }
+        }
     }
 }

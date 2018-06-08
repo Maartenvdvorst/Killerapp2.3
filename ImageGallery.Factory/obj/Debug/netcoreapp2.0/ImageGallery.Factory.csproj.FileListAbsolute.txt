@@ -16,3 +16,5 @@ C:\Users\maart\source\repos\Killerapp2.3\ImageGallery.Factory\obj\Debug\netcorea
 C:\Users\maart\source\repos\Killerapp2.3\ImageGallery.Factory\obj\Debug\netcoreapp2.0\ImageGallery.Factory.pdb
 C:\Users\maart\source\repos\Killerapp2.3\ImageGallery.Factory\bin\Debug\netcoreapp2.0\ImageGallery.Data.dll
 C:\Users\maart\source\repos\Killerapp2.3\ImageGallery.Factory\bin\Debug\netcoreapp2.0\ImageGallery.Data.pdb
+C:\Users\maart\source\repos\Killerapp2.3\ImageGallery.Factory\bin\Debug\netcoreapp2.0\Microsoft.WindowsAzure.Storage.dll
+C:\Users\maart\source\repos\Killerapp2.3\ImageGallery.Factory\bin\Debug\netcoreapp2.0\Microsoft.WindowsAzure.Storage.pdb

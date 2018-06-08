@@ -152,11 +152,12 @@ namespace ImageGallery.Data
             }
         }
 
-        public async Task SetNewImage(string title, string tags, string uri, string username)
+        public async Task SetNewImage(string title, string tags, Uri uri, string username)
         {
             int imageid = 0;
             using (SqlCommand query = new SqlCommand("InsertImage", connection))
             {
+                var url = uri.AbsoluteUri;
                 query.CommandType = CommandType.StoredProcedure;
                 query.Parameters.Add("@Created", SqlDbType.DateTime2);
                 query.Parameters.Add("@Title", SqlDbType.VarChar);
@@ -166,7 +167,7 @@ namespace ImageGallery.Data
                 id.Direction = ParameterDirection.ReturnValue;
                 query.Parameters["@Created"].Value = DateTime.Now;
                 query.Parameters["@Title"].Value = title;
-                query.Parameters["@Url"].Value = uri;
+                query.Parameters["@Url"].Value = url;
                 query.Parameters["@Username"].Value = username;
                 connection.Open();
                 query.ExecuteNonQuery();

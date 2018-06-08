@@ -12,5 +12,7 @@ namespace ImageGallery.Interfaces
         Task DeletePost(int id);
         Task DeleteComment(int id);
         IEnumerable<Accountlayout> GetAllUsers(string username);
+        Task MakeUser(string username);
+        Task MakeAdmin(string username);
     }
 }

@@ -8,9 +8,9 @@ namespace ImageGallery.Interfaces
 {
     public interface IAccountLogicDal
     {
-        Task CreateNewAccount(string gebruikersnaam, string wachtwoord, string email);
+        Task CreateNewAccount(string gebruikersnaam, byte[] wachtwoord, string email);
 
-        Task ChangeUserUsernameAndWachtwoord(string gebruikersnaam, string wachtwoord, string oldUserName);
+        Task ChangeUserUsernameAndWachtwoord(string gebruikersnaam, byte[] wachtwoord, string oldUserName);
 
         Task ChangeUserUsername(string gebruikersnaam, string oldUserName);
 
@@ -21,5 +21,7 @@ namespace ImageGallery.Interfaces
         Accountlayout GetUserByName(string username);
 
         IEnumerable<string> AllEmails();
+
+        bool Checkuser(string username, byte[] password);
     }
 }

@@ -10,7 +10,7 @@ namespace ImageGallery.Data
     public class AccountData : IAccountLogicDal
     {
         private readonly SqlConnection _connection = new SqlConnection("Data Source = (localdb)\\mssqllocaldb;Database=SimpleImageGallery;Trusted_Connection=True;MultipleActiveResultSets=true");
-        public async Task CreateNewAccount(string gebruikersnaam, string wachtwoord, string email)
+        public async Task CreateNewAccount(string gebruikersnaam, byte[] wachtwoord, string email)
         {
             using (SqlCommand query = new SqlCommand("INSERT INTO Logingegevens(Gebruikersnaam, Wachtwoord, Email, Created, Rol) VALUES (@Gebruikernsaam, @Wachtwoord, @Email, @Created, @Rol)", _connection))
             {
@@ -73,7 +73,7 @@ namespace ImageGallery.Data
             return null;
         }
 
-        public async Task ChangeUserUsernameAndWachtwoord(string gebruikersnaam, string wachtwoord, string OldUserName)
+        public async Task ChangeUserUsernameAndWachtwoord(string gebruikersnaam, byte[] wachtwoord, string OldUserName)
         {
             using (SqlCommand query = new SqlCommand("UPDATE Logingegevens SET Gebruikersnaam = @Gebruikersnaam, Wachtwoord = @Wachtwoord WHERE Gebruikersnaam = @Oldgebruikersnaam", _connection))
             {
@@ -123,6 +123,39 @@ namespace ImageGallery.Data
 
                 _connection.Close();
                 return rol;
+            }
+        }
+
+        public bool Checkuser(string username, byte[] password)
+        {
+            using (SqlCommand query = new SqlCommand("SELECT * FROM Logingegevens WHERE Gebruikersnaam = @username and Wachtwoord = @wachtwoord", _connection))
+            {
+                bool CorrectDetails;
+                _connection.Open();
+                query.Parameters.AddWithValue("@username", username);
+                query.Parameters.AddWithValue("@wachtwoord", password);
+                try
+                {
+                    using (SqlDataReader reader = query.ExecuteReader())
+                    {
+                        if(reader.Read())
+                        {
+                            CorrectDetails = true;
+                        }
+                        else
+                        {
+                            CorrectDetails = false;
+                        }
+                        reader.Close();
+                    }
+                }
+                catch
+                {
+                    return false;
+                }
+
+                _connection.Close();
+                return CorrectDetails;
             }
         }
 

@@ -24,3 +24,5 @@ C:\Users\maart\source\repos\Killerapp2.3\ImageGallery.Interfaces\obj\Debug\netco
 C:\Users\maart\source\repos\Killerapp2.3\ImageGallery.Interfaces\obj\Debug\netcoreapp2.0\ImageGallery.Interfaces.csproj.CopyComplete
 C:\Users\maart\source\repos\Killerapp2.3\ImageGallery.Interfaces\obj\Debug\netcoreapp2.0\ImageGallery.Interfaces.dll
 C:\Users\maart\source\repos\Killerapp2.3\ImageGallery.Interfaces\obj\Debug\netcoreapp2.0\ImageGallery.Interfaces.pdb
+C:\Users\maart\source\repos\Killerapp2.3\ImageGallery.Interfaces\bin\Debug\netcoreapp2.0\Microsoft.WindowsAzure.Storage.dll
+C:\Users\maart\source\repos\Killerapp2.3\ImageGallery.Interfaces\bin\Debug\netcoreapp2.0\Microsoft.WindowsAzure.Storage.pdb

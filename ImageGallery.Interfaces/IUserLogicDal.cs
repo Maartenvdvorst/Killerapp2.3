@@ -14,9 +14,7 @@ namespace ImageGallery.Interfaces
 
         GalleryImage GetImageById(int postId);
 
-        Task SetNewImage(string title, string tags, string uri, string username);
-
-        List<ImageTag> ParseTags(string tags);
+        Task SetNewImage(string title, string tags, Uri uri, string username);
 
         IEnumerable<Comment> GetCommentsByPostId(int postId);
 
